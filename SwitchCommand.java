@@ -27,11 +27,13 @@ public class SwitchCommand extends Command {
      *
      * @param comm1 The first Command to run.
      * @param comm2 The second Command to run.
-     * @param comm1First Whether or not the second Command will run first.
+     * @param comm1First Whether or not the first Command will run first.
      */
     public SwitchCommand(Command comm1, Command comm2, boolean comm1First) {
         this.comm1 = comm1;
         this.comm2 = comm2;
+
+        // Inverting boolean bc the initialize function inverts it before running the commands.
         this.state = !comm1First;
     }
 
